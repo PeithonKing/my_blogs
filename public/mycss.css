@@ -1,0 +1,9 @@
+
+ht {
+  color: black;
+  font-weight: bold;
+}
+
+.dark ht {
+  color: #ffff99;
+}

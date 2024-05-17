@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://peithonking.github.io/portfolio-page/
