@@ -3,7 +3,7 @@
 - [ ] Imprint part is left
 
 
-# writing blogs
+# writing thoughts
 
 - [ ] Llama vs ChatGPT
 - [ ] Linear Regression and Gradient Descent
