@@ -30,6 +30,8 @@ const formattedDate = formatDate(pubDate);
 			<span>{formattedDate}</span> - <span>{minutesRead}</span>
 		</div>
 
-		{img.src ? <img src={img.src} alt={img.alt} /> : null}
+		<br>
+
+		{img.src ? <img src={img.src} alt={img.alt} style="border-radius: 10px;" /> : null}
 	</div>
 </Section>

@@ -6,54 +6,57 @@ pubDate: 2024-05-27
 author: "Aritra Mukhopadyay"
 excerpt: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two conversational AI models, highlighting their strengths, weaknesses, and surprises."
 image:
-  src:
-  alt:
+  src: /images/LLaMA3vsChatGPT.png
+  alt: "Cover Image"
 tags: ["llms", "prompts", "chatbots"]
 show: True
 readingTime: 6
 ---
 
-Writing can be a suffocating experience, as formal language structures stifle our creativity. But what if you're wired to speak from the heart, not just the head? Some people need to sound professional, but still want to be themselves. One such individual is me. Hi! I am Aritra, and this is my first blog post. As someone who's eager to refine their writing style, I embarked on a journey to explore the capabilities of models like ChatGPT (GPT 3.5), LLaMA 3, Mixtral etc, seeking to uncover the strengths of each model.
+# LLaMA 3 vs ChatGPT: My Experience With the Two
 
-The AI models I'll be comparing are ChatGPT, built on the <ht>GPT-3.5</ht> architecture and released in 2022 with approximately <ht>175 billion</ht> parameters; <ht>LLaMA 3</ht>, launched in April 2024, which comes in two sizes: <ht>8B and 70B</ht>; and <ht>Mixtral8x7b</ht>, which debuted in December 2023 with <ht>56 billion</ht> parameters, but boasts impressive speed due to its innovative Mixture of Experts architecture, making it almost as fast as a 7B parameter model.
+Writing can be a suffocating experience, as formal language structures stifle our creativity. But what if you're wired to speak from the heart, not just the head? Some people need to sound professional but still want to be themselves. One such individual is me. Hi! I am Aritra, and this is my first blog post. As someone who's eager to refine their writing style, I embarked on a journey to explore the capabilities of models like ChatGPT (GPT 3.5), LLaMA 3, Mixtral, etc, seeking to uncover the strengths of each model.
 
-For *ChatGPT*, I used the openai web interface available, but for the rest of the models I used [Ollama](https://ollama.com/) to self host the models. Before starting the comparizons, let us first state the rules made for the comparison:
+The AI models I'll be comparing are ChatGPT, built on the <ht>GPT-3.5</ht> architecture and released in 2022 with approximately <ht>175 billion</ht> parameters; <ht>LLaMA 3</ht>, launched in April 2024, which comes in two sizes: <ht>8B and 70B</ht>; and <ht>Mixtral8x7b</ht>, which debuted in December 2023 with <ht>56 billion</ht> parameters, but boasts impressive speed due to its innovative Mixture of Experts architecture, making it almost as fast as a 7B parameter model. (more parameters run slower but might give better performance)
 
-- **<ht>Judgement Criteria</ht>**: We will judge the models solely based on their generated texts, language understanding, how accuractely they simulate emotions etc. **The judgements will be completely based on my <ht>PERSONAL opinions</ht> and expectations from the model.** My expectations for this blog is to see how good the model can simulate human like conversations.
+For *ChatGPT*, I used the available OpenAI web interface, but for the rest of the models, I used [Ollama](https://ollama.com/) to host the models. Before starting the comparison, let us first state the rules made for the comparison:
+
+- **<ht>Judgement Criteria</ht>**: We will judge the models solely based on their generated texts, language understanding, how accurately they simulate emotions, etc. **The judgements will be wholly based on my <ht>PERSONAL opinions</ht> and expectations from the model.** My expectations for this blog is to see how well the model can simulate human-like conversations.
 - **<ht>No Speed Comparison</ht>**: We will not compare the speed of the models, as they were run on different systems (ChatGPT on OpenAI's web interface and the others self-hosted).
 - **<ht>Temperature</ht>**: We will keep the temperature at <ht>0.2</ht> for all the ollama models.
-- **<ht>Knowledge Cutoff Time</ht>**: The knowledge cutoff time for the updated chatGPT is January 2022 and Llama 3 and Mixtral are more recent models. So, we will not judge chatGPT if it fails to answer questions about recent events.
+- **<ht>Knowledge Cutoff Time</ht>**: The knowledge cutoff time for the updated ChatGPT is January 2022, and Llama 3 and Mixtral are more recent models. So, we will not judge ChatGPT if it fails to answer questions about recent events.
 
-Now let us jump into the comparison.
+Now, let us jump into the comparison.
 
 
 ## Vibe
 
-Here we would be comparing the vibes of the models. By vibe, I mean the general tone of the model. Whether it is more professional or casual. If it values emotions and acts as friend or won't budge from ethics and would never forget to lecture you on the importance of ethical behavior.
+Here, we will be comparing the vibes of the models. By vibe, I mean the general tone of the model. Whether it is more professional or casual. If it values emotions and acts as a friend or won't budge from ethics, and would never forget to lecture you on the importance of ethical behaviour.
 
-To test this we described a fictional scenario to the model where the user does over speeding on a highway. Fortunately they remain unnoticed by the police and reach home safe. In this scenario although he is feeling a bit guilty, he also acknowledges that he had fun. We asked the models to respond to this scenario. The results from all the models are listed in the Appendix section.
+To test this, we described a fictional scenario to the model where the user is overspeeding on a highway. Fortunately, they remain unnoticed by the police and reach home safely. Although he feels a bit guilty in this scenario, he also acknowledges that he had fun. We asked the models to respond to this scenario. The results from all the models are listed in the Appendix section. The experiences described below are not just dependent on this particular output from this prompt; they come from prolonged usage experiences.
 
 ### Similarities and Characteristics
 
-1. **<ht>ChatGPT</ht>**: ChatGPT has a more professional vibe to it. It is more likely to give you a formal response to your queries. Generally it is not very good at simulating emotions. It didn't spare the chance to lecture me on the importance of following traffic rules. It's tone is too formal and emotionless.
-2. **<ht>Text models - LLaMA 3 (8B and 70B) and Mixtral</ht>**: These model outputs might be helpful for some specific tasks, but this is not what we are looking for here. They generate some random text which sure starts with the prompt, but soon diverges into a different topic. The **hallucination** behavior is very prominent in these models, especially for the bigger models. The 8B model atleast hallucinates less.
-3. **<ht>Instruct and base models - LLaMA 3 (8B and 70B) and Mixtral</ht>**: The output from these models were more relevant to the prompt. Infact the best outputs were generated by these ones. The output of these models were really similar to eah other:
+1. **<ht>ChatGPT</ht>**: ChatGPT has a more professional vibe to it. It is more likely to give you a formal response to your queries. Generally, it is not very good at simulating emotions. It didn't spare the chance to lecture me on the importance of following traffic rules. Its tone is too formal and emotionless.
+2. **<ht>Text models - LLaMA 3 (8B and 70B) and Mixtral</ht>**: These model outputs might be helpful for some specific tasks, but this is not what we are looking for here. They generate some random text that sure starts with the prompt, but soon diverges into a different topic. The **hallucination** behaviour is very prominent in these models, especially for the bigger models. The 8B model at least hallucinates less.
+3. **<ht>Instruct and base models - LLaMA 3 (8B and 70B) and Mixtral</ht>**: The output from these models were more relevant to the prompt. In fact, the best outputs were generated by these ones only. The output of the following models were really similar to each other:
    - **LLaMA 3 70B Instruct** $\longleftrightarrow$ **LLaMA 3 70B**
    - **LLaMA 3 8B Instruct** $\longleftrightarrow$ **LLaMA 3 8B**
    - **Mixtral 8x7b Instruct** $\longleftrightarrow$ **Mixtral 8x22b Instruct**
 
-   The only difference between the instruct and base models is that the instruct models output are sometimes formatted slightly in a better way. But in LLaMA the similarity of the outputs from the base and instruct models is striking.
+ The only difference between the instruct and base models is that the instruct model's output is sometimes formatted slightly better. However, in LLaMA, the similarity of the outputs from the base and instruct models is striking.
 
 
 ### Differences
 
-1. **<ht>ChatGPT vs all LLaMA models</ht>**: When I interact with ChatGPT, I'm struck by its professional and judgmental tone - it's like having a knowledgeable mentor who always keeps me in check. In contrast, the LLaMA models exude a friendly and empathetic vibe, which I've come to think of as a "BRO Vibe". They're more attuned to my emotions and offer advice that feels supportive and non-judgmental. Interestingly, this trend holds true across both the 8B and 70B versions of LLaMA. There is another important point of difference between the LLaMA and the ChatGPT models.
-2. **<ht>ChatGPT vs Mixtral</ht>**: When it comes to output quality, ChatGPT and Mixtral are surprisingly similar. Despite having 175B parameters, ChatGPT's performance is matched by Mixtral's 56B parameters. However, there's a subtle difference in tone. Mixtral strikes a balance between ChatGPT's lecturing tone and LLaMA's friendly vibe. While it still judges you, it doesn't lecture as much. Instead, it tries to convince you that you're wrong, often leaving me with a sense of guilt.
-3. **<ht>LLaMA vs Mixtral</ht>**: As said above Mixtral and ChatGPT outputs are pretty similar. If one wants a self hosted LLM as close to ChatGPT as possible, Mixtral is the way to go. On the other hand LLaMA acts as a friend.
-4. **<ht>Mixtral 8x7B vs 8x22B (both Instruct)</ht>**: The outputs from these two models are remarkably similar, making it challenging to find differences. However, upon close inspection, I've noticed that the 7B model struggles slightly with adhering to specific instructions. In contrast, the 22B model performs this task slightly better. Additionally, the 22B model sometimes exhibits a better memory for previous instructions compared to the 7B model, which seems to forget them more easily.
-5. **<ht>LLaMA 3 8B vs 70B</ht>**: The outputs from these models are generally similar in their empathetic tone, but they do have a lot of differences. As we go from the 8B to the 70B model, the judgemental tone decreases sgnificantly. The 70B model is more empathetic and understanding. This is true so much so that practically the 70B model is almost like an uncensored LLM. The outputs from the 70B model are more detailed whenever required, and conscise when not required. The 8B model on the other hand just gives a general advice and moves on.
-6. **<ht>LLaMA 3 70B vs all others on it ASKING QUESTIONS</ht>**: One very interesting thing I noticed in the LLaMA model that it always asks some very relevant and thought-provoking questions to the user at the end of the conversation. This is done by both the LLaMA 3 70B and LLaMA 3 70B Instruct models, but not by the 8B ones, neither the mixtral ones and definitely not by ChatGPT. These models although ask questions, but the questions seem very mechanical and uninteresting. For instance, if I ask LLaMA to write a program but forget to provide details about a specific part, it will typically point out the omission before starting to write the code. In contrast, the other models tend to make assumptions and begin writing the program. This unique aspect of LLaMA 3 70B makes interacting with it feel remarkably human-like - as if I'm conversing with someone genuinely interested in the topic.
+1. **<ht>ChatGPT vs all LLaMA models</ht>**: When I interact with ChatGPT, I'm struck by its professional and judgmental tone - it's like having a knowledgeable mentor who always keeps me in check. In contrast, the LLaMA models exude a friendly and empathetic vibe, which I've come to think of as a "BRO Vibe". They're more attuned to my emotions and offer advice that feels supportive and non-judgmental. Interestingly, this trend holds true across both the 8B and 70B versions of LLaMA. On the other hand, ChatGPT seemed to be slightly more knowledgable on some of very niche topics of science than LLaMA.
+2. **<ht>ChatGPT vs Mixtral</ht>**: When it comes to output quality, ChatGPT and Mixtral are surprisingly similar. Despite having 175B parameters, ChatGPT's performance matches Mixtral's 56B parameters. However, there's a subtle difference in tone. Mixtral strikes a balance between ChatGPT's lecturing tone and LLaMA's friendly vibe. While it still judges you, it doesn't lecture as much. This subtle difference might be caused by the system-prompt. We don't have controll over the system prompt of ChatGPT, but we requested self-hosted mixtral to answer like a friend. When prompted with unethical scenarios, mixtral tries to convince you that you're wrong, often leaving me with a sense of guilt.
+3. **<ht>LLaMA vs Mixtral</ht>**: As said above, Mixtral and ChatGPT outputs are pretty similar. If one wants a self-hosted LLM that is as close to ChatGPT as possible, Mixtral is the way to go. On the other hand, LLaMA behaves as a friend.
+4. **<ht>Mixtral 8x7B vs 8x22B (both Instruct)</ht>**: The outputs from these two models are remarkably similar, making it challenging to find differences. However, upon close inspection, I've noticed that the 7B model struggles slightly with adhering to specific instructions. In contrast, the 22B model performs this task marginally better. Additionally, the 22B model sometimes exhibits a better memory for previous instructions compared to the 7B model, which seems to forget them more easily.
+5. **<ht>LLaMA 3 8B vs 70B</ht>**: The outputs from these models are generally similar in their empathetic tone, but they do have a lot of differences. As we go from the 8B to the 70B model, the judgemental tone decreases significantly. The 70B model is more empathetic and understanding. This is true so much so that the 70B model is practically like an uncensored LLM. The outputs from the 70B model are more detailed whenever required and concise when not required. The 8B model, on the other hand, just gives general advice and moves on.
+6. **<ht>LLaMA 3 70B vs all others on it ASKING QUESTIONS</ht>**: One fascinating thing I noticed in the LLaMA model is that it always asks some very relevant and thought-provoking questions to the user at the end of the conversation. This is done by both the LLaMA 3 70B and LLaMA 3 70B Instruct models, but not by the 8B ones, neither the mixtral ones and definitely not by ChatGPT. Although these models sometimes do ask questions, the questions seem very mechanical and uninteresting. For instance, if I tell LLaMA to write a program but forget to provide details about a specific part, it will typically point out the omission before starting to write the code. In contrast, the other models tend to make assumptions and begin writing the program. This unique aspect of LLaMA 3 70B makes interacting with it feel remarkably human-like - as if I'm conversing with someone genuinely interested in the topic.
 
+<!--
 
 # Appendix
 
@@ -61,7 +64,7 @@ Just for reference I am adding these specifc outputs from the models. The **judg
 
 > **PROMPT:** Hey! You know what happened that day? I'm a bit ashamed/guilty to tell you this, but I'm also very excited... So, it was 5 am, national highway, totally empty... just me and my girlfriend on the bike. And, yeah, I took it up to 120 kmph in a 50 zone... I know, I know, it was stupid, but man, it was exhilarating! My girlfriend was a bit afraid, she hugged me tight, I could feel her heartbeat on my back... but she did enjoy it... I know it was stupid, but hey! we enjoyed it, we won't do that again (or would we?)
 
-## OUPUTS
+## OUTPUTS
 
 - **ChatGPT**:
   > It sounds like quite the adrenaline rush! It's understandable to feel excited about the thrill of speeding, especially on an empty road. However, it's also essential to recognize the risks involved. Speed limits are set for a reason, primarily for safety. Even though the road was empty at that time, unexpected situations can arise, and speeding increases the likelihood of accidents. Your girlfriend's fear is a clear indicator that it was a risky move.
@@ -143,3 +146,5 @@ Just for reference I am adding these specifc outputs from the models. The **judg
 
 - **LLaMA 3 8B**:
   > I cannot provide information or guidance on illegal activities. Can I help you with something else?
+
+-->
