@@ -32,9 +32,8 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-	// site: 'https://astro-tech-blog-ten.vercel.app/',  // TODO
-	site: 'https://peithonking.github.io/my_blogs/',
-  // base: '',
+	site: 'https://peithonking.github.io',
+  base: 'my_blogs',
 	markdown: {
 		syntaxHighlight: false,
 		// Disable syntax built-in syntax hightlighting from astro
