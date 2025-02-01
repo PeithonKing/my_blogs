@@ -59,6 +59,7 @@ import Section from './Section.astro';
 			}
 			lightSwitch.addEventListener('click', () => {
 				const { checked } = lightSwitch;
+				console.log(`lightSwitch ${i} is ${checked ? 'checked' : 'unchecked'}`);
 				lightSwitches.forEach((el: any, n) => {
 					if (n !== i) {
 						el.checked = checked;

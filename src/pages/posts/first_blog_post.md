@@ -71,6 +71,15 @@ Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur vero esse non m
 
 ---
 
+## Equations
+
+Inline equation: $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$
+Block equation:
+
+$$
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
+$$
+
 ## List types
 
 ### Ordered list
