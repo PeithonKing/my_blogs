@@ -6,7 +6,7 @@ pubDate: 2024-05-27
 author: "Aritra Mukhopadyay"
 excerpt: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two conversational AI models, highlighting their strengths, weaknesses, and surprises."
 image:
-  src: ../public/images/LLaMA3vsChatGPT.png
+  src: /my_blogs/public/images/LLaMA3vsChatGPT.png
   alt: "Cover Image"
 tags: ["llms", "prompts", "chatbots"]
 show: True
