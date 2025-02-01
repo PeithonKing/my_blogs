@@ -2,7 +2,7 @@
 import Section from './Section.astro';
 import Social from './Social.astro';
 
-// const site = Astro.site;
+const site = Astro.site;
 ---
 
 <Section>
@@ -18,7 +18,7 @@ import Social from './Social.astro';
 		</p>
 
 		<p class="py-2", style="line-height: 1.5; font-size: large">
-			If you're willing to take a moment to visit this corner of the internet, I'd love to have you along on my journey. This blog will be a space where I share my thoughts without the noise of social media. I don't want to clutter your notifications or feeds, but if you're curious about what I'm up to these days, I'll be here, sharing my stories and insights whenever the mood strikes me. (However you can still subscribe to the RSS feed if you want to be notified of new posts)
+			If you're willing to take a moment to visit this corner of the internet, I'd love to have you along on my journey. This blog will be a space where I share my thoughts without the noise of social media. I don't want to clutter your notifications or feeds, but if you're curious about what I'm up to these days, I'll be here, sharing my stories and insights whenever the mood strikes me. (However you can still subscribe to the <a href="my_blogs/rss.xml">RSS feed</a> if you want to be notified of new posts)
 		</p>
 	</div><br>
 	<div class="flex">
@@ -48,6 +48,14 @@ import Social from './Social.astro';
 		</Social>
 		<Social href="https://peithonking.github.io/portfolio-page/">
 			<i class="bi bi-person-lines-fill"></i>
+		</Social>
+		<Social href={`${site}my_blogs/rss.xml`}>
+			<svg viewBox="0 0 24 24" width="1.2em" height="1.2em"
+				><path
+					fill="currentColor"
+					d="M6.18 15.64a2.18 2.18 0 0 1 2.18 2.18C8.36 19 7.38 20 6.18 20C5 20 4 19 4 17.82a2.18 2.18 0 0 1 2.18-2.18M4 4.44A15.56 15.56 0 0 1 19.56 20h-2.83A12.73 12.73 0 0 0 4 7.27V4.44m0 5.66a9.9 9.9 0 0 1 9.9 9.9h-2.83A7.07 7.07 0 0 0 4 12.93V10.1Z"
+				></path></svg
+			>
 		</Social>
 	</div>
 </Section>
