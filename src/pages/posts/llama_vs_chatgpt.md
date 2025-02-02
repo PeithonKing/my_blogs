@@ -2,14 +2,14 @@
 layout: ../../layouts/post.astro
 title: "LLaMA 3 vs ChatGPT: My Experience With the Two"
 pubDate: 2024-05-27
-# description: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two conversational AI models, highlighting their strengths, weaknesses, and surprises."
+description: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two conversational AI models, highlighting their strengths, weaknesses, and surprises."
 author: "Aritra Mukhopadyay"
 excerpt: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two conversational AI models, highlighting their strengths, weaknesses, and surprises."
 image:
   src: /my_blogs/images/LLaMA3vsChatGPT.png
   alt: "Cover Image"
 tags: ["llms", "prompts", "chatbots"]
-show: True
+show: true
 readingTime: 6
 ---
 
