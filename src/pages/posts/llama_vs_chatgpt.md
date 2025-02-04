@@ -8,7 +8,7 @@ excerpt: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two con
 image:
   src: /my_blogs/images/LLaMA3vsChatGPT.png
   alt: "Cover Image"
-tags: ["llms", "prompts", "chatbots"]
+tags: ["llms", "prompts", "chatbots", "machine-learning"]
 show: true
 readingTime: 6
 ---
