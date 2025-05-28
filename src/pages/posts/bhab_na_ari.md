@@ -2,7 +2,7 @@
 layout: ../../layouts/post.astro
 title: "Kigo... Bhab Na Ari?"
 pubDate: 2025-05-28
-description: "Friendship over the window; my mother in the kitchen and a 7 year old on the other window."
+description: "Friendship over the window; my mother in the kitchen and a 7 year old on the other side. Names revealed, schools shared, stories of classmates and teachers, little everyday adventures and mischief. How the monitor had jot down her name that day. How her friend got punishment while talking to her. How the teacher gave her a toffee for being a good girl. How she accidentally broke a glass and her mother scolded her. My mother listened patiently, sometimes gasping in surprise, sometimes consoling, or laughing quietly at the girl’s innocent complaints."
 author: "Aritra Mukhopadyay"
 excerpt: "Names revealed, schools shared, stories of classmates and teachers, little everyday adventures and mischief. How the monitor had jot down her name that day. How her friend got punishment while talking to her. How the teacher gave her a toffee for being a good girl. How she accidentally broke a glass and her mother scolded her. My mother listened patiently, sometimes gasping in surprise, sometimes consoling, or laughing quietly at the girl’s innocent complaints."
 image:
