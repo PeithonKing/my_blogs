@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post.astro
 title: "Blynk IoT: Getting Started"
-pubDate: 2021-12-09 01:09:32 +0530
+pubDate: 2021-12-09
 description: "Blynk is a popular IoT platform that enables easy cloud connectivity for devices, allowing them to be operated from anywhere. Using NodeMCU and the Arduino IDE, this tutorial will show how to program and utilize Blynk for coordinated device communication."
 author: "Aritra Mukhopadyay"
 excerpt: "Start your First Blynk 2.0 Project!"

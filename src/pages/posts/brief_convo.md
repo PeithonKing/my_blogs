@@ -10,7 +10,6 @@ image:
   alt: "Cover Image"
 tags: ["story",]
 show: true
-# readingTime: 6
 ---
 
 
