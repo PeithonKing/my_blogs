@@ -30,7 +30,7 @@ One evening, from that staircase window, a voice called out, stretching playfull
 "Eii! Tumi ki rannna korcho go..."<br>
 (hey! what are you cooking?)
 
-Not really a question about the food — more like a gentle tap on a door that had never been knocked on before. My mother heard the warmth first. She had been a high school teacher for twenty years; dealing with babies was her business. That subtle, magical tone — she recognized it instantly. For a moment, she wanted to respond immediately. To reach across the ten feet with words.
+Not really a question about the food — more like a gentle tap on a door that had never been knocked on before. My mother heard the warmth first. She has been a high school teacher for twenty years now; dealing with babies is her business. That subtle, magical tone — she recognized it instantly. For a moment, she wanted to respond immediately. To reach across the ten feet with words.
 
 But something held her back. In this city, friendliness can feel like trespassing. The unspoken rules are clear: adults do not chat with children who aren’t theirs.
 
@@ -38,12 +38,12 @@ How will her parents respond if she starts talking... would they mind? Would the
 
 So she responded softly...
 
-“Doodh gorom korchhi go."<br>
+“Doodh gorom korchhi go..."<br>
 (I am warming milk)
 
 The conversation kite caught wind...
 
-What followed was a slow unraveling. Names revealed, schools shared, stories of classmates and teachers, little everyday adventures and mischief. How the monitor had jot down her name that day. How her friend got punishment while talking to her. How the teacher gave her a toffee for being a good girl. How she accidentally broke a glass and her mother scolded her. My mother listened patiently, sometimes gasping in surprise, sometimes consoling, or laughing quietly at the girl’s innocent complaints.
+What followed was a slow unraveling. Names revealed, schools shared, stories of classmates and teachers, little everyday adventures and mischief. How the monitor had noted down her name that day. How her friend got punishment while talking to her. How the teacher gave her a toffee for being a good girl. How she accidentally broke a glass and her mother scolded her. My mother listened patiently, sometimes gasping in surprise, sometimes consoling, or laughing quietly at the girl’s innocent complaints.
 
 In those small exchanges, a quiet warmth blossomed — a friendship stitched from fleeting moments and soft voices across the open air.
 
@@ -51,7 +51,7 @@ Sometimes the girl would ask about the plants on the rooftop or the meals being 
 
 ---
 
-But this afternoon, on the rooftop, my mother might not have been able to fully engage with her. She was busy with chores — washing clothes, watering plants — and the girl’s stories about her small hardships poured out from the higher rooftop. My mother wanted to listen, but she could only offer distracted half-smiles and gentle nods, caught between duty and desire. She got offended...
+But this afternoon, on the rooftop, my mother might not have been able to fully engage with her. She was busy with chores — washing clothes, watering plants — and the little girl’s stories about her large hardships poured out from the higher rooftop. My mother wanted to listen, but she could only offer distracted half-smiles and gentle nods, caught between duty and desire. She got offended...
 
 "Jao tomar sathe aar kotha bolbo na. Ari!"<br>
 (Go I won't talk to u anymore! Friendship cancelled!)
