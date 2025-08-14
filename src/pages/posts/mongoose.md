@@ -1,7 +1,7 @@
 ---
 layout: ../../layouts/post.astro
 title: "The Mongoose Matters"
-pubDate: 2025-07-06
+pubDate: 2025-08-14
 description: "A nostalgic reflection on childhood encounters with mongooses."
 author: "Aritra Mukhopadyay"
 excerpt: "A chance sighting of two mongooses on a rainy afternoon rooftop pulls me back to a childhood filled with their sudden appearances — in dining rooms, in gardens, in family stories. Between playful memories and a vanishing “jungle,” the encounter becomes a small, bittersweet bridge between past and present."
