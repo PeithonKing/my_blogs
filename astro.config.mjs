@@ -2,8 +2,6 @@ import { defineConfig } from 'astro/config';
 import tailwind from '@astrojs/tailwind';
 import { remarkReadingTime } from './src/utils/readingTime';
 import rehypePrettyCode from 'rehype-pretty-code';
-// import vercelStatic from '@astrojs/vercel/static';
-import react from '@astrojs/react';
 import sitemap from "@astrojs/sitemap";
 
 
@@ -40,11 +38,7 @@ export default defineConfig({
 		rehypePlugins: [[rehypePrettyCode, options]],
 		remarkPlugins: [remarkReadingTime]
 	},
-	integrations: [tailwind(), react(), sitemap()],
+  integrations: [tailwind(), sitemap()],
 	output: 'static',
-	// adapter: vercelStatic({
-	// 	webAnalytics: {
-	// 		enabled: true
-	// 	}
-	// })
+
 });

@@ -8,7 +8,7 @@ import Heading from '@/components/Heading.astro';
 const { title } = AppConfig;
 const { description } = AppConfig;
 
-const postModules = (import.meta as any).glob('../posts/*.md', { eager: true }) as Record<string, any>;
+const postModules = (import.meta as any).glob('../posts/*.{md,mdx}', { eager: true }) as Record<string, any>;
 const allPosts = Object.values(postModules) as any[];
 
 const allTags: Set<string> = new Set(

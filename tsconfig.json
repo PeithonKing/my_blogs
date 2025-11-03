@@ -31,7 +31,7 @@
 		"skipLibCheck": true,
 		"forceConsistentCasingInFileNames": true,
 
-		"jsx": "react-jsx",
+        
 		// Enable stricter transpilation for better output.
 		"isolatedModules": true,
 		// Add type definitions for our Vite runtime.
@@ -42,5 +42,5 @@
 			"@/*": ["./src/*"]
 		}
 	},
-	"include": ["src/**/*.ts", "src/**/*.tsx", "src/**/*.astro", "src/components/PostOverview.tsx"]
+	"include": ["src/**/*.ts", "src/**/*.astro"]
 }
