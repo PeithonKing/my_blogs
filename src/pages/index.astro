@@ -8,8 +8,8 @@ import { sortPostsByDate } from '@/utils/data.util';
 const { title } = AppConfig;
 const { description } = AppConfig;
 
-const allPosts = await Astro.glob('./posts/*.md');
-// console.log(allPosts[0]?.frontmatter.show);
+const postModules = (import.meta as any).glob('./posts/*.md', { eager: true }) as Record<string, any>;
+const allPosts = Object.values(postModules) as any[];
 allPosts.sort(sortPostsByDate);
 
 const latestPosts = allPosts.filter((post) => {

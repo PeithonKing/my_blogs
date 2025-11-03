@@ -9,13 +9,14 @@ import { sortPostsByDate } from '@/utils/data.util';
 const { title } = AppConfig;
 const { description } = AppConfig;
 
-const allPosts = await Astro.glob('./*.md');
+const postModules = (import.meta as any).glob('./*.md', { eager: true }) as Record<string, any>;
+const allPosts = Object.values(postModules) as any[];
 allPosts.sort(sortPostsByDate);
 
 const posts_to_show = allPosts.filter((post) => {
-  const today = new Date();
-  const pubDate = new Date(post.frontmatter.pubDate);
-  return pubDate <= today && post.frontmatter.show === true;
+    const today = new Date();
+    const pubDate = new Date(post.frontmatter.pubDate);
+    return pubDate <= today && post.frontmatter.show === true;
 })
 
 ---

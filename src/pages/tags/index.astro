@@ -8,13 +8,14 @@ import Heading from '@/components/Heading.astro';
 const { title } = AppConfig;
 const { description } = AppConfig;
 
-const allPosts = await Astro.glob('../posts/*.md');
+const postModules = (import.meta as any).glob('../posts/*.md', { eager: true }) as Record<string, any>;
+const allPosts = Object.values(postModules) as any[];
 
 const allTags: Set<string> = new Set(
-  allPosts
-    .filter(post => post.frontmatter.show) // Filter posts where show is true
-    .map(post => post.frontmatter.tags)    // Extract tags
-    .flat()                                // Flatten the array of tags
+    allPosts
+        .filter(post => post.frontmatter.show) // Filter posts where show is true
+        .map(post => post.frontmatter.tags)    // Extract tags
+        .flat()                                // Flatten the array of tags
 );
 ---
 
