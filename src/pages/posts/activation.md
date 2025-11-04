@@ -11,6 +11,7 @@ image:
 tags: ["machine-learning", "theory", "philosophy", "activation-functions"]
 show: false
 # readingTime: 6
+needLatex: false
 ---
 
 # My Understanding of Activation Functions

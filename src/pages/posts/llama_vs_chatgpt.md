@@ -11,6 +11,7 @@ image:
 tags: ["llms", "prompts", "chatbots", "machine-learning"]
 show: true
 readingTime: 6
+needLatex: true
 ---
 
 # LLaMA 3 vs ChatGPT: My Experience With the Two

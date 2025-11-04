@@ -10,6 +10,7 @@ image:
   alt: "Cover Image"
 tags: ["story",]
 show: true
+needLatex: false
 ---
 
 

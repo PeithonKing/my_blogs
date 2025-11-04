@@ -11,6 +11,7 @@ image:
 tags: ["robotics", "IoT", "Blynk", "NodeMCU", "Arduino"]
 show: true
 # readingTime: 6
+needLatex: false
 ---
 
 
