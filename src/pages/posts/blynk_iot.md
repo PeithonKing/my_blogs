@@ -6,7 +6,7 @@ description: "Blynk is a popular IoT platform that enables easy cloud connectivi
 author: "Aritra Mukhopadyay"
 excerpt: "Start your First Blynk 2.0 Project!"
 image:
-  src: /my_blogs/images/getting-started-with-blynk2.0-banner.png
+  src: /my_blogs/images/getting-started-with-blynk2.0-banner.webp
   alt: "Cover Image"
 tags: ["robotics", "IoT", "Blynk", "NodeMCU", "Arduino"]
 show: true
@@ -43,7 +43,7 @@ First you have to go to the [Blynk Site](https://blynk.cloud/dashboard/login) si
 
 After you have logged in to your Blynk account, you will be able to see a dashboard like this:
 
-[![image](/my_blogs/images/blynk/dashboard.png)](/my_blogs/images/blynk/dashboard.png)
+[![image](/my_blogs/images/blynk/dashboard.webp)](/my_blogs/images/blynk/dashboard.webp)
 
 ***
 ## <a name="Templates"></a>2. Templates
@@ -56,12 +56,12 @@ Creating templates is somewhat like defining objects in programming and creating
 To create a template, first click on the new template button on the dashboard and fill up the form. I am using a NodeMCU which is based on the *ESP8266* microchip. So, I have put **"Hardware = ESP8266"**.\
 This is how mine looks:
 
-[![image](/my_blogs/images/blynk/templates1.png)](/my_blogs/images/blynk/templates1.png)
+[![image](/my_blogs/images/blynk/templates1.webp)](/my_blogs/images/blynk/templates1.webp)
 
 Finally click on <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:5px 15px 5px 15px">Done</button> button to create the template.\
 After creating the template, you will see something like this:
 
-[![image](/my_blogs/images/blynk/templates2.png)](/my_blogs/images/blynk/templates2.png)
+[![image](/my_blogs/images/blynk/templates2.webp)](/my_blogs/images/blynk/templates2.webp)
 
 Under the *Info* tab, you can further edit the data you have just entered along with some other fileds.
 
@@ -91,7 +91,7 @@ I have taken Virtual Pin **V0** (available V0-V255). Here we will controll an LE
 
 Mine looks like this:
 
-[![image](/my_blogs/images/blynk/datastream.png)](/my_blogs/images/blynk/datastream.png)
+[![image](/my_blogs/images/blynk/datastream.webp)](/my_blogs/images/blynk/datastream.webp)
 
 When done, click on <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:7px">Create</button> button to create the datastream.
 
@@ -104,13 +104,13 @@ Finally click on the nut (settings) icon on the top left corner of the switch wh
 
 I have filled it up like this:
 
-[![image](/my_blogs/images/blynk/WebDashboard.png)](/my_blogs/images/blynk/WebDashboard.png)
+[![image](/my_blogs/images/blynk/WebDashboard.webp)](/my_blogs/images/blynk/WebDashboard.webp)
 
 If you have brought the LED to the workspace, which will show you the current state of the actual LED, you need to connect that to to the required datastream too (in my case V0). Click on the icon to do that.
 
 This is how my Web Dashboard came up to be:
 
-[![image](/my_blogs/images/blynk/WebDashboard2.png)](/my_blogs/images/blynk/WebDashboard2.png)
+[![image](/my_blogs/images/blynk/WebDashboard2.webp)](/my_blogs/images/blynk/WebDashboard2.webp)
 
 When you are done click <button style="background-color: #47cfa2;border-radius:5px;border:none;padding:5px 15px 5px 15px">Save</button> on the top right.
 #### Congratulations! Your template is ready!
@@ -129,13 +129,13 @@ We will learn both the processes in detail. We will only learn the second method
 
 Go to the search tab on the navigation bar on the left. 
 
-[![image](/my_blogs/images/blynk/AuthToken1.png)](/my_blogs/images/blynk/AuthToken1.png)
+[![image](/my_blogs/images/blynk/AuthToken1.webp)](/my_blogs/images/blynk/AuthToken1.webp)
 
 Then Click on <button style="background-color: #47cfa2; border-radius:5px;border:none;padding:7px">**+** New Device</button> button and select to add a device from Template (the other options are not for us). Select the template name and name the device. I will use a green LED. So I kept the name of my device as **Green LED**.
 
 Now, on the top right corner, you will see a pop up like this:
 
-[![image](/my_blogs/images/blynk/AuthToken2.png)](/my_blogs/images/blynk/AuthToken2.png)
+[![image](/my_blogs/images/blynk/AuthToken2.webp)](/my_blogs/images/blynk/AuthToken2.webp)
 
 This contains all the informations which are needed to be put into the code apart from the WiFi credentials. 
 
@@ -154,7 +154,7 @@ We would need to install *ESP8266 Board* and the *Blynk Library* in the Arduino 
 
 * File -> Prefferences -> Paste this link ```http://arduino.esp8266.com/stable/package_esp8266com_index.json``` in *Additional Boards Manager URLs* field -> OK
 
-[![image](/my_blogs/images/blynk/InstallBoard1.png)](/my_blogs/images/blynk/InstallBoard1.png)
+[![image](/my_blogs/images/blynk/InstallBoard1.webp)](/my_blogs/images/blynk/InstallBoard1.webp)
 
 ...next in the Arduino IDE, go to:
 

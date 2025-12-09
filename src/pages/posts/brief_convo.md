@@ -6,7 +6,7 @@ description: "A brief late-night encounter at a campus canteen turns into an une
 author: "Aritra Mukhopadyay"
 excerpt: "He didn’t say another word. But his eyes told me a whole Mahabharata-length story."
 image:
-  src: /my_blogs/images/brief_convo.png
+  src: /my_blogs/images/brief_convo.webp
   alt: "Cover Image"
 tags: ["story",]
 show: true

@@ -6,7 +6,7 @@ description: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two
 author: "Aritra Mukhopadyay"
 excerpt: "Comparing LLaMA 3 and ChatGPT: My hands-on experience with the two conversational AI models, highlighting their strengths, weaknesses, and surprises."
 image:
-  src: /my_blogs/images/LLaMA3vsChatGPT.png
+  src: /my_blogs/images/LLaMA3vsChatGPT.webp
   alt: "Cover Image"
 tags: ["llms", "prompts", "chatbots", "machine-learning"]
 show: true

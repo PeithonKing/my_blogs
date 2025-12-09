@@ -6,7 +6,7 @@ description: "A nostalgic reflection on childhood encounters with mongooses."
 author: "Aritra Mukhopadyay"
 excerpt: "A chance sighting of two mongooses on a rainy afternoon rooftop pulls me back to a childhood filled with their sudden appearances — in dining rooms, in gardens, in family stories. Between playful memories and a vanishing “jungle,” the encounter becomes a small, bittersweet bridge between past and present."
 image:
-  src: /my_blogs/images/mongoose/1.png
+  src: /my_blogs/images/mongoose/1.webp
   alt: "Cover Image"
 tags: ["story",]
 show: true
@@ -37,7 +37,7 @@ They lived underground. Dug deep into the soft soil, making crisscrossing tunnel
 
 **During the monsoon, when their tunnels flooded, they’d often sneak into the house.** Harmless creatures, really. Just wet, nervous, and fast.
 
-![a mongoose sniffing fruits in the fruit basket on the dining table](/my_blogs/images/mongoose/2.png)
+![a mongoose sniffing fruits in the fruit basket on the dining table](/my_blogs/images/mongoose/2.webp)
 
 I was in class 5 or 6 at that time. Ours was a morning school, and I came back by noon. After lunch, I was supposed to sleep so that I wouldn't feel tired in the evening while studying. But in reality, I would steal my sleeping time and read storybooks. As I would hear someone coming, I would swiftly shut the book and pretend like I went to sleep reading.
 
@@ -53,7 +53,7 @@ I stood there for a moment, half amused, half amazed. Then I went back to bed. T
 
 ---
 
-![My little brother running behind the mongoose](/my_blogs/images/mongoose/3.png)
+![My little brother running behind the mongoose](/my_blogs/images/mongoose/3.webp)
 
 The next story is about my little brother. He was in his second year of life then. Learning to walk and talk. Starting to explore the world around. Accidentally kicking the balloons while falling down, amazing himself of his superpowers.
 
@@ -67,7 +67,7 @@ When Maa came home, he told her the entire adventure in detail. When Baba came b
 
 
 ---
-![My Grandma horrified by the dead snake](/my_blogs/images/mongoose/4.png)
+![My Grandma horrified by the dead snake](/my_blogs/images/mongoose/4.webp)
 
 I remember that time, my grandma had an incident. She is an early riser. Both of them wake up before the sun. Grandpa would immediately go to the market to get the best fish, while she would wake up early and put water on the doorstep. Then she would get some flowers from the garden for offering and some tulsi leaves to put in grandpas tea. All these chores used to get completed by the time we woke up and the cook or our househelp arrived.
 
