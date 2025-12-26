@@ -7,7 +7,7 @@ const site = Astro.site;
 
 <Section>
 	<br />
-	<p class="pb-2 pt-6 text-4xl font-bold">Hello!</p>
+	<p class="pb-2 pt-6 text-4xl font-bold"><span id="greeting"></span>!</p>
 	<div class="text-sm">
 		<p class="py-2", style="line-height: 1.5; font-size: large">
 			Welcome to my blog! I'm Aritra Mukhopadhyay, a Physics Major student at NISER with a passion for exploring the intersection of physics and computer science. As a self-taught programmer, I've always been driven by curiosity and a desire to learn.
@@ -22,7 +22,7 @@ const site = Astro.site;
 		</p>
 	</div><br>
 	<div class="flex">
-		<Social href="https://github.com/PeithonKing" name='GitHub'>
+		<Social href="https://github.com/PeithonKing" name="GitHub">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-4 w-4"
@@ -34,7 +34,7 @@ const site = Astro.site;
 				></path>
 			</svg>
 		</Social>
-		<Social href="https://www.linkedin.com/in/peithonking/" name='LinkedIn'>
+		<Social href="https://www.linkedin.com/in/peithonking/" name="LinkedIn">
 			<svg
 				xmlns="http://www.w3.org/2000/svg"
 				class="h-4 w-4"
@@ -46,10 +46,10 @@ const site = Astro.site;
 				></path>
 			</svg>
 		</Social>
-		<Social href="https://peithonking.github.io/portfolio-page/" name='Personal Website'>
+		<Social href="https://peithonking.github.io/portfolio-page/" name="Personal Website">
 			<i class="bi bi-person-lines-fill"></i>
 		</Social>
-		<Social href={`${site}my_blogs/rss.xml`} name='RSS feed'>
+		<Social href={`${site}my_blogs/rss.xml`} name="RSS feed">
 			<svg viewBox="0 0 24 24" width="1.2em" height="1.2em"
 				><path
 					fill="currentColor"
@@ -59,3 +59,22 @@ const site = Astro.site;
 		</Social>
 	</div>
 </Section>
+
+<script>
+	function updateGreeting() {
+		const greeting = document.getElementById('greeting');
+		if (greeting) {
+			const hour = new Date().getHours();
+			let welcomeText = '';
+			if (hour >= 5 && hour < 12) welcomeText = 'Good morning';
+			else if (hour >= 12 && hour < 17) welcomeText = 'Good afternoon';
+			else if (hour >= 17 && hour < 22) welcomeText = 'Good evening';
+			else welcomeText = 'Good night';
+
+			greeting.innerText = welcomeText;
+		}
+	}
+
+	updateGreeting();
+	document.addEventListener('astro:after-swap', updateGreeting);
+</script>

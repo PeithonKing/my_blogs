@@ -10,16 +10,35 @@ const { frontmatter } = Astro.props;
 ---
 
 <Base head={{ title: frontmatter.title, description, needLatex: frontmatter.needLatex || false }}>
+	<div
+		id="progress-bar"
+		class="fixed bottom-0 left-0 z-50 h-[4px] w-0 bg-orange-600 transition-all duration-75 ease-out"
+	>
+	</div>
 	<div class="mx-auto w-full max-w-screen-md">
 		<PostHeader
 			title={frontmatter.title}
 			author={frontmatter.author}
 			tags={frontmatter.tags}
-			minutesRead={frontmatter.readingTime ? `${frontmatter.readingTime} min read` : frontmatter.minutesRead}
+			minutesRead={frontmatter.readingTime
+				? `${frontmatter.readingTime} min read`
+				: frontmatter.minutesRead}
 			pubDate={frontmatter.pubDate}
 			img={{ src: frontmatter.image.src, alt: frontmatter.image.alt }}
+			url={frontmatter.url}
 		/>
 		<PostContent><slot /></PostContent>
 	</div>
 </Base>
 
+<script>
+	window.addEventListener('scroll', () => {
+		const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+		const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+		const scrolled = (winScroll / height) * 100;
+		const progressBar = document.getElementById('progress-bar');
+		if (progressBar) {
+			progressBar.style.width = scrolled + '%';
+		}
+	});
+</script>

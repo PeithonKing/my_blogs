@@ -10,6 +10,7 @@ const { post } = Astro.props;
 
 <a href={post.url}>
 	<div
+		transition:name={`card-${post.url}`}
 		class="h-full rounded-2xl bg-stone-200/50 from-orange-900 via-amber-700 to-white p-[1px] text-sm shadow-[inset_0_0_0_1px_rgba(255,255,255,0.4)] hover:bg-gradient-to-r dark:bg-gray-900"
 	>
 		<div
@@ -25,13 +26,23 @@ const { post } = Astro.props;
 		>
 			<div class="flex-auto">
 				<div class="flex justify-between pb-4 text-xs">
-					<p>{formatDate(post.frontmatter.pubDate)}</p>
-					<p>{post.frontmatter.readingTime ? `${post.frontmatter.readingTime} min read` : post.frontmatter.minutesRead}</p>
+					<p transition:name={`date-${post.url}`}>{formatDate(post.frontmatter.pubDate)}</p>
+					<p transition:name={`time-${post.url}`}>
+						{
+							post.frontmatter.readingTime
+								? `${post.frontmatter.readingTime} min read`
+								: post.frontmatter.minutesRead
+						}
+					</p>
 				</div>
 
-				<p class="pb-4 text-lg font-bold">{post.frontmatter.title}</p>
+				<p class="pb-4 text-lg font-bold" transition:name={`title-${post.url}`}>
+					{post.frontmatter.title}
+				</p>
 
-				<Tags tags={post.frontmatter.tags} />
+				<div transition:name={`tags-${post.url}`}>
+					<Tags tags={post.frontmatter.tags} />
+				</div>
 				<p class="line-clamp-6 pt-4">{post.frontmatter.excerpt}</p>
 			</div>
 			<p class="pt-4 underline">read more →</p>
