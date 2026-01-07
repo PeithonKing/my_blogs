@@ -5,6 +5,9 @@ import rehypePrettyCode from 'rehype-pretty-code';
 import sitemap from "@astrojs/sitemap";
 
 
+import mdx from '@astrojs/mdx';
+
+
 const options = {
   // Specify the theme to use or a custom theme json, in our case
   // it will be a moonlight-II theme from
@@ -30,15 +33,15 @@ const options = {
 
 // https://astro.build/config
 export default defineConfig({
-	site: 'https://peithonking.github.io',
+    site: 'https://peithonking.github.io',
   base: 'my_blogs',
-	markdown: {
-		syntaxHighlight: false,
-		// Disable syntax built-in syntax hightlighting from astro
-		rehypePlugins: [[rehypePrettyCode, options]],
-		remarkPlugins: [remarkReadingTime]
-	},
-  integrations: [tailwind(), sitemap()],
-	output: 'static',
+    markdown: {
+        syntaxHighlight: false,
+        // Disable syntax built-in syntax hightlighting from astro
+        rehypePlugins: [[rehypePrettyCode, options]],
+        remarkPlugins: [remarkReadingTime]
+    },
+  integrations: [tailwind(), sitemap(), mdx()],
+    output: 'static',
 
 });
