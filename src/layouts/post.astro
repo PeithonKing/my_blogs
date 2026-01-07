@@ -32,7 +32,7 @@ const { frontmatter } = Astro.props;
 </Base>
 
 <script>
-	window.addEventListener('scroll', () => {
+	function updateProgress() {
 		const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
 		const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
 		const scrolled = (winScroll / height) * 100;
@@ -40,5 +40,13 @@ const { frontmatter } = Astro.props;
 		if (progressBar) {
 			progressBar.style.width = scrolled + '%';
 		}
+	}
+
+	document.addEventListener('astro:page-load', () => {
+		window.addEventListener('scroll', updateProgress);
+	});
+
+	document.addEventListener('astro:before-swap', () => {
+		window.removeEventListener('scroll', updateProgress);
 	});
 </script>

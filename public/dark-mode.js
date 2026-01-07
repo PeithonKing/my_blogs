@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("astro:page-load", () => {
 	const lightSwitches = document.querySelectorAll('.light-switch');
 
 	if (lightSwitches.length > 0) {

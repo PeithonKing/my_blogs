@@ -33,18 +33,23 @@ const {
 			href="https://peithonking.github.io/portfolio-page/images/icon.svg"
 		/>
 
-		<script>
-			if (
-				localStorage.getItem('dark-mode') === 'true' ||
-				(!('dark-mode' in localStorage) &&
-					window.matchMedia('(prefers-color-scheme: dark)').matches)
-			) {
-				localStorage.setItem('dark-mode', 'true');
-				document.querySelector('html')?.classList.add('dark');
-			} else {
-				localStorage.setItem('dark-mode', 'false');
-				document.querySelector('html')?.classList.remove('dark');
+		<script is:inline>
+			function applyTheme() {
+				if (
+					localStorage.getItem('dark-mode') === 'true' ||
+					(!('dark-mode' in localStorage) &&
+						window.matchMedia('(prefers-color-scheme: dark)').matches)
+				) {
+					localStorage.setItem('dark-mode', 'true');
+					document.documentElement.classList.add('dark');
+				} else {
+					localStorage.setItem('dark-mode', 'false');
+					document.documentElement.classList.remove('dark');
+				}
 			}
+
+			applyTheme();
+			document.addEventListener('astro:after-swap', applyTheme);
 		</script>
 
 		<link rel="stylesheet" href="/my_blogs/mycss.css" />
@@ -79,6 +84,11 @@ const {
 				},
 				messageStyle: 'none'
 			});
+			document.addEventListener('astro:page-load', () => {
+				if (window.MathJax) {
+					window.MathJax.Hub.Queue(['Typeset', window.MathJax.Hub]);
+				}
+			});
 		</script>
 
 		{
@@ -97,8 +107,9 @@ const {
 		</div>
 
 		<Footer />
-	</body><style is:global>
-		:root {
-		}
-	</style>
+		<style is:global>
+			:root {
+			}
+		</style>
+	</body>
 </html>
