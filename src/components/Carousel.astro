@@ -1,0 +1,291 @@
+---
+interface Image {
+	src: string;
+	alt: string;
+	label?: string;
+}
+
+interface Props {
+	id?: string;
+	images: Image[];
+}
+
+const { images } = Astro.props;
+const galleryId = 'gallery-' + Math.random().toString(36).slice(2, 11);
+
+// We display max 4 images in the grid
+const displayImages = images.slice(0, 4);
+const remainingCount = Math.max(0, images.length - 4);
+---
+
+<div class="carousel-container my-8 break-inside-avoid">
+	<div
+		class="grid aspect-video grid-cols-4 grid-rows-3 gap-0 overflow-hidden rounded-xl border border-gray-200 bg-gray-200 dark:border-gray-800 dark:bg-gray-800"
+	>
+		{/* Main Left Image (75% width, full height) */}
+		{
+			displayImages.length > 0 && (
+				<div
+					class="group relative col-span-3 row-span-3 cursor-pointer"
+					onclick={`openConfiguredGallery('${galleryId}', 0)`}
+				>
+					<img
+						src={displayImages[0]!.src}
+						alt={displayImages[0]!.alt}
+						class="m-0 h-full w-full !rounded-none object-cover transition-transform duration-500 group-hover:scale-105"
+					/>
+				</div>
+			)
+		}
+
+		{/* Right Column Stack */}
+		<div class="col-span-1 row-span-3 flex flex-col gap-0">
+			{
+				displayImages.slice(1).map((img, idx) => (
+					<div
+						class="group relative flex-1 cursor-pointer overflow-hidden"
+						onclick={`openConfiguredGallery('${galleryId}', ${idx + 1})`}
+					>
+						<img
+							src={img.src}
+							alt={img.alt}
+							class="m-0 h-full w-full !rounded-none object-cover transition-transform duration-500 group-hover:scale-105"
+						/>
+						{/* Last image overlay if there are more images */}
+						{idx === 2 && remainingCount > 0 && (
+							<div class="fade-in absolute inset-0 flex items-center justify-center bg-black/60">
+								<span class="text-xl font-bold text-white">+{remainingCount}</span>
+							</div>
+						)}
+					</div>
+				))
+			}
+		</div>
+	</div>
+</div>
+
+{/* Lightbox Modal */}
+<dialog
+	id={galleryId}
+	class="lightbox-modal group fixed inset-0 z-[100] h-full max-h-none w-full max-w-none bg-transparent p-0 backdrop:bg-black/80 focus:outline-none"
+	onclick={`if(event.target === this) closeGallery('${galleryId}')`}
+>
+	{/* Content Container */}
+	<div class="pointer-events-none relative flex h-full w-full items-center justify-center">
+		{/* Navigation Arrows */}
+		<button
+			class="pointer-events-auto absolute left-4 p-4 text-4xl text-white/50 transition-colors hover:text-white focus:outline-none"
+			onclick={`navigateGallery('${galleryId}', -1)`}
+		>
+			<i class="bi bi-chevron-left"></i>
+		</button>
+		<button
+			class="pointer-events-auto absolute right-4 p-4 text-4xl text-white/50 transition-colors hover:text-white focus:outline-none"
+			onclick={`navigateGallery('${galleryId}', 1)`}
+		>
+			<i class="bi bi-chevron-right"></i>
+		</button>
+
+		{/* Close Button */}
+		<button
+			class="pointer-events-auto absolute right-4 top-4 z-20 p-2 text-3xl text-white/50 hover:text-white focus:outline-none"
+			onclick={`closeGallery('${galleryId}')`}
+		>
+			<i class="bi bi-x-lg"></i>
+		</button>
+
+		{/* Image Container */}
+		<div class="relative flex h-[96%] w-[96%] items-center justify-center">
+			<img
+				id={`${galleryId}-img`}
+				src=""
+				alt=""
+				class="animate-zoom-in pointer-events-auto max-h-full max-w-full rounded-sm object-contain shadow-2xl"
+			/>
+			<p
+				id={`${galleryId}-caption`}
+				class="absolute bottom-[-40px] left-0 right-0 text-center text-sm text-white/80"
+			>
+			</p>
+		</div>
+	</div>
+</dialog>
+
+<style>
+	/* 1px gap effect needs transparent borders or background gap strategy */
+	/* Handled by gap-[1px] and bg color on container */
+
+	dialog[open] {
+		animation: fade-in 0.2s ease-out;
+	}
+
+	dialog[open]::backdrop {
+		animation: backdrop-fade-in 0.3s ease-out;
+	}
+
+	@keyframes fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	@keyframes backdrop-fade-in {
+		from {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+
+	.animate-zoom-in {
+		animation: zoom-in 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+	}
+
+	@keyframes zoom-in {
+		from {
+			transform: scale(0.9);
+			opacity: 0;
+		}
+		to {
+			transform: scale(1);
+			opacity: 1;
+		}
+	}
+</style>
+
+<script is:inline define:vars={{ images, galleryId }}>
+	// Store gallery state locally to handling multiple instances
+	window.galleryData = window.galleryData || {};
+	window.galleryData[galleryId] = {
+		images: images,
+		currentIndex: 0
+	};
+
+	window.openConfiguredGallery = (id, index) => {
+		const dialog = document.getElementById(id);
+		const data = window.galleryData[id];
+		if (!dialog || !data) return;
+
+		data.currentIndex = index;
+		updateGalleryImage(id);
+
+		dialog.showModal();
+
+		// Push State
+		const url = new URL(window.location);
+		url.hash = `#gallery-${id}`;
+		history.pushState({ galleryId: id }, '', url);
+
+		document.documentElement.style.overflow = 'hidden'; // Prevent background scroll
+	};
+
+	window.closeGallery = (id) => {
+		const dialog = document.getElementById(id);
+		if (!dialog) return;
+
+		dialog.close();
+		document.documentElement.style.overflow = '';
+
+		// Remove hash if it exists
+		if (window.location.hash === `#gallery-${id}`) {
+			history.back(); // Use back to clean up logic if state was pushed
+		} else {
+			// Clean up hash manually if needed (edge case)
+			history.replaceState(null, '', window.location.pathname + window.location.search);
+		}
+	};
+
+	window.navigateGallery = (id, direction) => {
+		const data = window.galleryData[id];
+		if (!data) return;
+
+		data.currentIndex = (data.currentIndex + direction + data.images.length) % data.images.length;
+		updateGalleryImage(id);
+	};
+
+	function updateGalleryImage(id) {
+		const data = window.galleryData[id];
+		const imgEl = document.getElementById(`${id}-img`);
+		const capEl = document.getElementById(`${id}-caption`);
+
+		if (imgEl && data.images[data.currentIndex]) {
+			imgEl.src = data.images[data.currentIndex].src;
+			imgEl.alt = data.images[data.currentIndex].alt;
+
+			// Transition logic handled by CSS animation class
+			imgEl.classList.remove('animate-zoom-in');
+			void imgEl.offsetWidth; // trigger reflow
+			imgEl.classList.add('animate-zoom-in');
+		}
+		if (capEl) {
+			capEl.innerText = data.images[data.currentIndex].label || '';
+		}
+	}
+
+	// Keyboard Navigation
+	document.addEventListener('keydown', (e) => {
+		// Find visible dialog
+		const openDialog = document.querySelector('dialog[open]');
+		if (!openDialog) return;
+
+		const id = openDialog.id;
+
+		switch (e.key.toLowerCase()) {
+			case 'arrowright':
+			case 'd':
+			case 'l':
+			case 's': // Down / Next
+			case 'k': // Up / Next (Vim style: j is down, k is up - usually j=next in readers, let's stick to geometric or convention.
+			// Vim: j = down, k = up.
+			// In a horizontal carousel:
+			// Right = Forward/Next.
+			// Left = Back/Prev.
+			// Mapping vertical to horizontal is ambiguous but usually: Down(j) -> Next, Up(k) -> Prev or vice versa.
+			// Let's support standard "Gamer" W (up) / S (down) and Vim J (down) / K (up).
+			// Convention: "Next" is usually "Down" in a feed or "Right" in a gallery.
+			// Let's map Down/Right to Next, Up/Left to Prev.
+			case 'j': // Down -> Next
+				navigateGallery(id, 1);
+				break;
+			case 'arrowleft':
+			case 'a':
+			case 'h':
+			case 'w': // Up -> Prev
+			case 'k': // Up -> Prev
+				navigateGallery(id, -1);
+				break;
+			// ESC is handled natively by <dialog> but we need to cleanup URL
+			case 'escape':
+				// The dialog close event will handle cleanup usually, but let's ensure
+				break;
+		}
+	});
+
+	// Handle History Back
+	window.addEventListener('popstate', (event) => {
+		const openDialog = document.querySelector('dialog[open]');
+		if (openDialog) {
+			// If we hit back, close the dialog WITHOUT calling history.back() again
+			openDialog.close();
+			document.documentElement.style.overflow = '';
+		}
+	});
+
+	// Listen for dialog close event (native ESC or method call)
+	document.addEventListener('astro:page-load', () => {
+		const dialogs = document.querySelectorAll('dialog.lightbox-modal');
+		dialogs.forEach((dialog) => {
+			dialog.addEventListener('close', () => {
+				document.documentElement.style.overflow = '';
+				// If the hash is still there (e.g. ESC pressed), remove it
+				if (window.location.hash === `#gallery-${dialog.id}`) {
+					history.replaceState(null, '', window.location.pathname + window.location.search);
+				}
+			});
+		});
+	});
+</script>

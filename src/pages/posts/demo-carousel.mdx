@@ -1,0 +1,63 @@
+---
+layout: ../../layouts/post.astro
+title: 'Visual Storytelling: A Carousel Demo'
+pubDate: 2024-03-15
+description: 'Exploring how the new Carousel component allows for better narrative flow in technical blog posts.'
+author: 'Aritra'
+image:
+  src: '/my_blogs/images/activation_cover.png'
+  alt: 'Cover image showing activation functions'
+tags: ['demo', 'components', 'design']
+minutesRead: '2'
+show: false
+---
+
+import Carousel from '../../components/Carousel.astro';
+
+# The Power of Grouping
+
+When writing technical blogs, we often have a series of images that belong together. Perhaps it's a step-by-step tutorial, a comparison of results, or just a collection of moments from a project.
+
+Traditionally, we'd stack them vertically, which kills the rhythm of the reading. Today, I'm introducing the **Carousel** component—a way to group these moments into a single, cohesive unit.
+
+## The Activation Project
+
+Here is a glimpse into the "Activation" project, showing the progression from initial thought to the final comparison. All these images are grouped to respect your viewport.
+
+<Carousel
+	images={[
+		{
+			src: '/my_blogs/images/activation1.png',
+			alt: 'Initial Activation Function Plot',
+			label: 'Phase 1: Visualizing the initial activation function curves.'
+		},
+		{
+			src: '/my_blogs/images/bhab_na_ari.png',
+			alt: 'Deep Thinking Process',
+			label: "Phase 2: The 'Thinking' phase - debugging the model weights."
+		},
+		{
+			src: '/my_blogs/images/LLaMA3vsChatGPT.png',
+			alt: 'Benchmarking Llama 3 vs ChatGPT',
+			label: 'Phase 3: Benchmarking results against industry standards.'
+		},
+		{
+			src: '/my_blogs/images/brief_convo.png',
+			alt: 'Brief Conversation Logs',
+			label: 'Phase 4: Analyzing the conversation output quality.'
+		},
+		{
+			src: '/my_blogs/images/activation_cover.png',
+			alt: 'Final Project Cover',
+			label: 'Phase 5: The final project cover art.'
+		}
+	]}
+/>
+
+## Why This Matters
+
+By grouping these 5 images, we saved about **2000 pixels of vertical vertical scrolling**. The narrative remains uninterrupted.
+
+Clicking any image above opens the immersive view, allowing you to inspect the details without losing your place in the article. This is the balance between _evidence_ and _story_.
+
+Stay tuned for more updates!
